@@ -1,0 +1,52 @@
+.card {
+    display: flex;
+    justify-content: space-between;
+  width: 80rem;
+  background: #e6e6e6;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 0.5vmin solid #05060f;
+  box-shadow: 0.4rem 0.4rem #05060f;
+  overflow: hidden;
+  color: black;
+}
+
+.pricingblockcontent {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.pricingplan {
+  color: #05060f;
+  font-size: 1.6rem;
+  line-height: 1.25;
+  font-weight: 700;
+  margin: 0;
+}
+
+.pricevalue p{
+  display: flex;
+  color: #05060f;
+  font-size: 1.5rem;
+  line-height: 1.25;
+  font-weight: 700;
+  margin: 0;
+}
+
+.pricingnote {
+    opacity: 0.8;
+    font-size: 1.2rem;
+  }
+  
+
+.card button {
+    background: #edbf68;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1.5rem;
+    color: #201e1a;
+    font-size: 1.25rem;
+    cursor: pointer;
+  }

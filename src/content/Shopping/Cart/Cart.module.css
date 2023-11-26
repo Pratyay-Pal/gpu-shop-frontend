@@ -1,0 +1,78 @@
+.card {
+  display: flex;
+  width: 60rem;
+  height: fit-content;
+  border-radius: 20px 0 0 20px;
+  background: #212121;
+}
+
+.card h1 {
+  margin: 0;
+  padding: 10px 20px;
+  color: aliceblue;
+}
+
+.card h2 {
+  margin: 0;
+  padding: 10px 20px;
+  color: aliceblue;
+}
+
+.cardcontainer {
+  display: flex;
+  margin-left: 2rem;
+  margin-bottom: 3rem;
+  margin-right: 2rem;
+  border-radius: 20px;
+  box-shadow: 15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(60, 60, 60);
+}
+
+.changeqtybutton {
+  background: #ffffff;
+  border: none;
+  color: #201e1a;
+  font-size: 1.25rem;
+  cursor: pointer;
+  float: right;
+  font-family: monospace;
+  font-size: 40px;
+  padding: 0 20px 0 20px;
+}
+
+.quantitybutton{
+    background: #ffffff;
+  border: none;
+  color: #201e1a;
+  float: right;
+  font-family: monospace;
+  font-size: 16px;
+}
+
+.cardblock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 30px;
+}
+
+.cardblock h2 {
+  margin: 0;
+  padding: 0px 20px 10px 20px;
+  color: aliceblue;
+}
+
+.cardblock span {
+  margin: 0;
+  color: aliceblue;
+  font-family: monospace;
+  padding-top: 10px;
+  font-size: 15px;
+}
+
+.totalSum{
+  display: flex;
+  justify-content: center;
+  font-family: monospace;
+  font-size: 30px;
+  color: wheat;
+}

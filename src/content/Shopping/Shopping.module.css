@@ -1,0 +1,83 @@
+.shoppingbg {
+    font-family: 'Merriweather', serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #f3e7d4;
+    min-height: 100vh;
+    background-color: #212121;
+  }
+  
+
+.mainheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 15% 1rem 15%;
+}
+
+.maintitle {
+  display: flex;
+  align-items: center;
+}
+
+.mainheader h1 {
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+  --text-stroke-color: black;
+  --fs-size: 2em;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "Arial";
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+  background-color: #37FF8B;
+  padding: 10px;
+}
+
+/* === removing default button style ===*/
+.mainheader button {
+  margin: 0;
+  height: auto;
+  background: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+
+/* button styling */
+.mainheader button {
+  --border-right: 5px;
+  --text-stroke-color: rgba(255,255,255,0.6);
+  --animation-color: #37FF8B;
+  --fs-size: 2em;
+  letter-spacing: 3px;
+  text-decoration: none;
+  font-size: var(--fs-size);
+  font-family: "Arial";
+  position: relative;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text-stroke-color);
+}
+/* this is the text, when you hover on button */
+.hovertext {
+  position: absolute;
+  box-sizing: border-box;
+  content: attr(data-text);
+  color: var(--animation-color);
+  width: 0%;
+  inset: 0;
+  border-right: var(--border-right) solid var(--animation-color);
+  overflow: hidden;
+  transition: 0.5s;
+  -webkit-text-stroke: 1px var(--animation-color);
+}
+/* hover */
+.mainheader button:hover .hovertext {
+  width: 100%;
+  filter: drop-shadow(0 0 23px var(--animation-color))
+}
