@@ -9,7 +9,6 @@ export default function Card({id, title, price, description}) {
       <div className={classes.card}>
         <div className={classes.pricingblockcontent}>
           <p className={classes.pricingplan}>{title}</p>
-          <div className={classes.pricingnote}>{description}</div>
           <div className={classes.pricevalue}>
             <p>${price}</p>
           </div>
