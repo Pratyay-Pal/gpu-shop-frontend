@@ -1,12 +1,16 @@
 .shopcontainer{
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 0 20%;
+    justify-content: center;
 }
 .shopcontainer ol{
     list-style: none;
 }
 .shopcontainer li{
     margin-top: 20px;
+}
+
+.tableprops  {
+    display:grid;
+    grid-template-columns:auto auto auto auto;
 }

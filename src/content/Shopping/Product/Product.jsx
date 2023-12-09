@@ -1,8 +1,18 @@
-import Card from '../UI/ShopCard/ShopCard';
-import classes from './Product.module.css'
+import Card from "../UI/ShopCard/ShopCard";
+import classes from "./Product.module.css";
 
-export default function Product({productItem}){
-    return(<>
-    <Card id={productItem.id} title={productItem.title} price={productItem.price} description={productItem.description}></Card>
-    </>);
+export default function Product({ productItem }) {
+  return (
+    <>
+      <div className={classes.card}>
+        <Card
+          id={productItem.gpuid}
+          title={productItem.gpuname}
+          price={productItem.price}
+          company={productItem.company}
+          imagelink={productItem.s3bucketkey}
+        ></Card>
+      </div>
+    </>
+  );
 }

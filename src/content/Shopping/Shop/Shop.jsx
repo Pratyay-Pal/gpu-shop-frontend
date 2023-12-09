@@ -2,17 +2,17 @@ import Product from "../Product/Product";
 import classes from "./Shop.module.css";
 
 export default function Shop({ products }) {
-  console.log(products)
+  console.log(products);
   return (
     <>
       <div className={classes.shopcontainer}>
-        <ol>
+        <div className={classes.tableprops}>
           {products.map((product) => (
-            <li key={product.gpuid}>
+            <div key={product.gpuid}>
               <Product productItem={product}></Product>
-            </li>
+            </div>
           ))}
-        </ol>
+        </div>
       </div>
     </>
   );
