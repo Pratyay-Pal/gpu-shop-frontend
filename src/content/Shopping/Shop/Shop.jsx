@@ -1,19 +1,23 @@
 import Product from "../Product/Product";
 import classes from "./Shop.module.css";
 
-export default function Shop({ products }) {
-  console.log(products);
+export default function Shop({ products, isLoading }) {
   return (
     <>
-      <div className={classes.shopcontainer}>
-        <div className={classes.tableprops}>
-          {products.map((product) => (
-            <div key={product.gpuid}>
-              <Product productItem={product}></Product>
+    {isLoading && <h1 style={{display: "flex", justifyContent: "center"}}>LOADING...</h1>}
+      {!isLoading && (
+        <>
+          <div className={classes.shopcontainer}>
+            <div className={classes.tableprops}>
+              {products.map((product) => (
+                <div key={product.gpuid}>
+                  <Product productItem={product}></Product>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      </div>
+          </div>
+        </>
+      )}
     </>
   );
 }
