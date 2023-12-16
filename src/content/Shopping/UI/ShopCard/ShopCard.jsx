@@ -1,9 +1,9 @@
 import { useContext } from "react";
 import classes from "./ShopCard.module.css";
-import { CartContext } from "../../ContextStore/cartContext";
+import { StoreContext } from "../../ContextStore/storeContext";
 
 export default function Card({ id, title, price, company, imagelink }) {
-  const { onAddToCart } = useContext(CartContext);
+  const { onAddToCart } = useContext(StoreContext);
   return (
     <>
       <div className={classes.card}>

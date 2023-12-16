@@ -1,9 +1,9 @@
 import classes from "./Cart.module.css";
 import { useContext } from "react";
-import { CartContext } from "../ContextStore/cartContext";
+import { StoreContext } from "../ContextStore/storeContext";
 
 export default function Cart() {
-  const cartContext = useContext(CartContext);
+  const storeContext = useContext(StoreContext);
 
   const calcEach = (price, quantity) => {
     return price * quantity;
@@ -11,7 +11,7 @@ export default function Cart() {
 
   const calcTotal = () => {
     let sum = 0;
-    cartContext.items.forEach((item) => {
+    storeContext.items.forEach((item) => {
       sum = sum + item.price * item.quantity;
     });
     return sum;
@@ -19,10 +19,10 @@ export default function Cart() {
 
   return (
     <>
-      {cartContext.items.length === 0 ? (
+      {storeContext.items.length === 0 ? (
         <h1>Cart is empty. Buy something.</h1>
       ) : (
-        cartContext.items.map((item) => (
+        storeContext.items.map((item) => (
           <div key = {item.id} className={classes.cardcontainer}>
             <div className={classes.card}>
               <div className={classes.cardblock}>
@@ -38,11 +38,11 @@ export default function Cart() {
                 <h2>{item.quantity}</h2>
               </div>
             </div>
-            <button className={classes.changeqtybutton} onClick={() => cartContext.onChangeQuantity(item.id, "-")}>-</button>
+            <button className={classes.changeqtybutton} onClick={() => storeContext.onChangeQuantity(item.id, "-")}>-</button>
             <div className={classes.quantitybutton}>
               <h2>{item.quantity}</h2>
             </div>
-            <button className={classes.changeqtybutton} onClick={() => cartContext.onChangeQuantity(item.id, "+")}>+</button>
+            <button className={classes.changeqtybutton} onClick={() => storeContext.onChangeQuantity(item.id, "+")}>+</button>
             <div className={classes.cardblock}>
                 <span>Total</span>
                 <h2>{calcEach(item.price, item.quantity)}</h2>

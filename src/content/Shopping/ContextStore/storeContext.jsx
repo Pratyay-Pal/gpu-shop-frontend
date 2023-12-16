@@ -1,16 +1,22 @@
 import { createContext, useState } from "react";
-import { DUMMY_PRODUCTS } from "../dummy_products";
 
-export const CartContext = createContext({
+export const StoreContext = createContext({
   items: [],
+  gpuList: [],
   onAddToCart: () => {},
   onChangeQuantity: () => {},
+  updateGpuList: () => {}
 });
 
-export default function CartContextProvider({ children }) {
+export default function StoreContextProvider({ children }) {
   const [cart, setCart] = useState({
     items: [],
   });
+  const [gpuList, setGpuList] = useState([])
+
+  const updateGpuList = (gpuList) => {
+    setGpuList(gpuList)
+  }
 
   const onAddToCart = (id) => {
     console.log("Adding " + id + " to cart");
@@ -30,10 +36,10 @@ export default function CartContextProvider({ children }) {
         };
         updatedItems[existingCartItemIndex] = updatedItem;
       } else {
-        const product = DUMMY_PRODUCTS.find((product) => product.id === id);
+        const product = gpuList.find((product) => product.gpuid === id);
         updatedItems.push({
           id: id,
-          name: product.title,
+          name: product.gpuname,
           price: product.price,
           quantity: 1,
         });
@@ -72,13 +78,15 @@ export default function CartContextProvider({ children }) {
     });
   };
 
-  const cartCtx = {
+  const storeCtx = {
     items: cart.items,
+    gpuList: gpuList,
     onAddToCart: onAddToCart,
     onChangeQuantity: onChangeQuantity,
+    updateGpuList: updateGpuList,
   };
 
   return (
-    <CartContext.Provider value={cartCtx}>{children}</CartContext.Provider>
+    <StoreContext.Provider value={storeCtx}>{children}</StoreContext.Provider>
   );
 }
