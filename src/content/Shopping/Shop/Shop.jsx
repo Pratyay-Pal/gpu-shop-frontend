@@ -18,6 +18,8 @@ export default function Shop() {
       }
     }
     getGpuList();
+    // THIS BELOW LINE IS DELIBERATE TO REMOVE THE WARNING. ADDING CONTEXT TO DEPENDENCIES CAUSES INFINITE LOOP
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   if (isError) {
     return <Error title="ERROR" message={isError.message} />;
@@ -44,6 +46,7 @@ export default function Shop() {
               ))}
             </div>
           </div>
+          <button>CLICK</button>
         </>
       )}
     </>
